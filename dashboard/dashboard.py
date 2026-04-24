@@ -42,7 +42,8 @@ st.markdown("""
 # ── Load data ─────────────────────────────────────────────────────────────────
 @st.cache_data
 def load_data():
-    df = pd.read_csv("main_data.csv")
+   import os
+df = pd.read_csv(os.path.join(os.path.dirname(__file__), "main_data.csv"))
     df["dteday"] = pd.to_datetime(df["dteday"])
     return df
 
